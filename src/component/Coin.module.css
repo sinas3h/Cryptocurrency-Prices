@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    /* width: 700px; */
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #F7ECDE;
+    border-radius: 10px;
+    padding: 1rem;
+    /* width: max-content; */
+    color: rgb(56, 56, 56);
+    transition: .2s;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    
+}
+
+
+.container:hover {
+    scale: 1.15;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.image {
+    width: 40px;
+    margin-right: .3rem;
+    mix-blend-mode: multiply;
+    
+}
+
+.name , .change , .price , .rank , .symbol {
+    margin:0 .4rem;
+    text-align: left;
+    padding: .25rem;
+    width: 75px;
+    font-weight:400;
+}
+
+.cap {
+    margin-left:.4rem;
+    text-align: right;
+    padding: .5rem;
+    width: 150px;
+}
+
+.name {
+    font-weight: bolder;
+    width: 120px;
+}
+
+.rank {
+    width: 30px;
+}
+
+.changeG , .changeR {
+    width: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.changeG{
+    color: rgb(6, 169, 6);
+}
+
+.changeR {
+    color: red;
+}
+
+/* .rank {
+    margin-right: 1rem;
+} */
+
+/* .symbol {
+    text-align: left;
+    margin: 0 1rem;
+} */
+
+
