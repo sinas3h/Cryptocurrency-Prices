@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+.loading {
+    color: black;
+    font-size: 25px;
+    color: #12403f;
+}
+
 .coinsDiv {
     margin-bottom: 5rem;
 }
@@ -32,7 +38,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    scale: 1.3;
+    scale: 1.2;
     /* transition: 0.5s; */
 }
 
@@ -42,8 +48,18 @@ input::placeholder {
 
 
 
-/* .coinsDiv {
-    width: fit-content;
-    width: 700px;
-
+/* @media screen and (max-width : 750px) {
+    .coinsDiv {
+        width: 550px;
+    }
 } */
+
+
+@media screen and (max-width : 660px) {
+    input[type=text] {
+        width: 200px;
+        height: 40px;
+        font-size: 11px;
+    }
+
+}

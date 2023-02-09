@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { getCoin } from '../service/Api';
 import Coin from './Coin';
 import style from './Landing.module.css'
+
+
 
 const Landing = () => {
 
@@ -17,6 +19,8 @@ useEffect(() => {
 },[])
 console.log(coins)
 
+const Coin = React.lazy(() => import('./Coin'))
+
 const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.toLowerCase()))
 
     return (
@@ -26,7 +30,9 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
             </div>
 
             <div className={style.coinsDiv}>
-                {coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}    
+                <Suspense fallback={<h2 className={style.loading}>Loading...</h2>}>
+                    {coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}   
+                </Suspense> 
             </div>
         </div>
     );
