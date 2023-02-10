@@ -26,6 +26,7 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
     return (
         <div className={style.container}>
             <div className={style.inputDiv}>
+                <h1 className={style.header}><span>Cryptocurrency</span> Prices by Market Cap</h1>
                 <input className={style.input} placeholder='search' type='text' value={input} onChange={(e) => {setInput(e.target.value)}}></input>
             </div>
 
