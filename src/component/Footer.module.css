@@ -1,0 +1,25 @@
+.footer {
+    width: 100%;
+    background-color: var(--color-gray-dark);
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    color: var(--color-beige-lighter);
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width : 880px) {
+    .footer {
+        font-size: 1.4rem;
+        height: 4.5rem;
+    }
+}
+
+@media screen and (max-width : 660px) {
+    .footer {
+        font-size: 1.2rem;
+        height: 3.5rem;
+    }
+}

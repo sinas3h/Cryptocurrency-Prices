@@ -4,14 +4,14 @@
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
-    background-color: #F7ECDE;
+    background-color: #F0ECE3;
     border-radius: 10px;
     padding: 1rem;
-    color: rgb(56, 56, 56);
+    color: var(--color-gray-dark);
     transition: .2s;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    width: 680px;
-    height: 40px;
+    width: 68rem;
+    height: 4rem;
     
 }
 
@@ -22,17 +22,27 @@
 }
 
 .image {
-    width: 40px;
+    width: 4rem;
     margin-right: .3rem;
     mix-blend-mode: multiply;
+    border-radius: 50%;
+    box-sizing: border-box;
     
 }
 
-.name , .change , .price , .rank , .symbol {
+.name , .change , .price , .rank {
     margin:0 .4rem;
     text-align: left;
     padding: .25rem;
-    width: 75px;
+    width: 8rem;
+    font-weight:400;
+}
+
+.symbol {
+    margin:0 .1rem;
+    text-align: left;
+    padding: .25rem;
+    width: 8rem;
     font-weight:400;
 }
 
@@ -40,20 +50,20 @@
     margin-left:.4rem;
     text-align: right;
     padding: .5rem;
-    width: 150px;
+    width: 15rem;
 }
 
 .name {
     font-weight: bolder;
-    width: 120px;
+    width: 12rem;
 }
 
 .rank {
-    width: 30px;
+    width: 3rem;
 }
 
 .changeG , .changeR {
-    width: 50px;
+    width: 5rem;
     font-weight: bold;
     text-align: center;
 }
@@ -68,35 +78,33 @@
 
 @media screen and (max-width : 880px) {
     .container {
-        font-size: 11px;
-        width: 500px;
-        height: 35px;
+        font-size: 1.3rem;
+        width: 50rem;
+        height: 3.5rem;
     }
 
     .image {
-        width: 35px;
+        width: 3.5rem;
     }
 
     .name , .change , .price , .rank , .symbol {
         margin:0 .1rem;
-        text-align: left;
-        padding: .2rem;
-        width: 60px;
+        padding: 0rem;
+        width: 6.5rem;
     }
 
     .cap {
         margin-left:.1rem;
-        text-align: right;
         padding: .5rem;
-        width: 90px;
+        width: 10.5rem;
     }
 
     .rank {
-        width: 15px;
+        width: 1.5rem;
     }
 
     .symbol {
-        width: 40px;
+        width: 4rem;
     }
 }
 
@@ -105,9 +113,9 @@
 
 @media screen and (max-width : 660px) {
     .container {
-        font-size: 10px;
-        width: 300px;
-        height: 30px;
+        font-size: 1rem;
+        width: 30rem;
+        height: 3rem;
         padding:.6rem .4rem;
     }
 
@@ -116,17 +124,16 @@
     }
 
     .image {
-        width: 30px;
+        width: 3rem;
     }
 
     .name , .change , .price , .rank , .symbol {
-        text-align: left;
-        padding: .1rem;
-        width: 50px;
+        padding: .05rem;
+        width: 6rem;
     }
 
     .change {
-        width: 15px;
+        width: 1.5rem;
         margin-right: 0;
     }
 
@@ -137,13 +144,12 @@
     .cap {
         margin-left:0;
         margin-right: .2rem;
-        text-align: right;
         padding: 0;
-        width: 105px;
+        width: 10.5rem;
     }
 
     .rank {
-        width: 10px;
+        width: 1rem;
         margin-right: .5rem;
     }
 
@@ -152,8 +158,9 @@
     }
 
     .price {
-        width: 65px;
+        width: 6.5rem;
         margin-right: 0;
+        text-align: center;
     }
 }
 

@@ -41,3 +41,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+:root {
+	--color-beige-lighter : #F0ECE3;
+	--color-beige-light : #DFD3C3;
+	--color-beige-dark : #C7B198;
+	--color-beige-darker : #9b8975;
+	--color-gray : #596E79;
+	--color-gray-dark : #3e4d55;
+}
