@@ -5,12 +5,13 @@
     align-items: center;
     position: relative;
     margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
 .header {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     text-align: center;
     color: var(--color-beige-lighter);
     /* text-shadow: #607EAA 1px 2px 12px; */
@@ -29,10 +30,10 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     background-color: #596E79;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1.2rem;
     color: var(--color-beige-lighter);
     transition: .2s;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
@@ -68,7 +69,33 @@
 }
 
 .coinsDiv {
+    margin-bottom: 3rem;
+    position : relative;
+    height: 30rem;
+    overflow: hidden;
+    width: 80rem;
+    /* border-bottom: var(--color-beige-lighter) 2px solid; */
+}
+
+.coinsDivActive {
     margin-bottom: 5rem;
+    position : relative;
+    width: 80rem;
+}
+
+  
+.coinsDiv:after {
+    content  : "";
+    position : absolute;
+    z-index  : 1;
+    bottom   : 0;
+    left     : 0;
+    pointer-events   : none;
+    background-image : linear-gradient(to bottom, 
+                        rgba(255,255,255, 0), 
+                        var(--color-beige-dark) 95%);
+    width    : 100%;
+    height   : 4rem;
 }
 
 .inputDiv {
@@ -105,6 +132,20 @@ input[type=text]:focus {
 
 input::placeholder {
     color: var(--color-beige-darker);
+}
+
+
+.viewMore {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: var(--color-gray-dark);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.viewMore:hover {
+    color: var(--color-gray);
 }
 
 
@@ -164,6 +205,16 @@ input::placeholder {
         width: 20rem;
         height: 4rem;
         font-size: 1rem;
+    }
+
+    .coinsDiv {
+        height: 30rem;
+        width: 34rem;
+    }
+
+    .viewMore {
+        bottom: 1rem;
+        font-size: 1.2rem;
     }
 
     .table {

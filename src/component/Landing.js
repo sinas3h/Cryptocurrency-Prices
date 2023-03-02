@@ -10,6 +10,7 @@ const Landing = () => {
 
 const [coins , setCoins] = useState([])
 const [input , setInput] = useState('')
+const [viewMore , setViewMore] = useState(false)
 
 useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,15 @@ useEffect(() => {
     fetchData()
 },[])
 console.log(coins)
+
+const viewMoreHandler = ()=> {
+    setViewMore(!viewMore)
+    console.log("more")
+    console.log(viewMore)
+}
+
+
+
 
 const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.toLowerCase()))
 
@@ -37,12 +47,14 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
                 <p className={style.tableMktcap}>Market Cap</p>
             </div>
 
-            <div className={style.coinsDiv}>
+            <div className={!viewMore ? style.coinsDiv : style.coinsDivActive }>
                 {coins == false ? <Loading />
                 : coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}
-                {/* {coins ? coinFilter.map(coin => <Coin key={coin.id} data={coin} />)
-                :<h2 className={style.loading}>Loading...</h2> } */}
             </div>
+
+            {(coins.length && !viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>}
+            {(coins.length && viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view less</p>}
+            
         </div>
     );
 };

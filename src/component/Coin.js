@@ -13,7 +13,6 @@ const Coin = (props) => {
             <p className={price_change_percentage_24h>0 ? style.changeG : style.changeR}>{price_change_percentage_24h.toFixed(2)}</p>
             <p className={style.cap}>$ {market_cap.toLocaleString()}</p>
             
-
         </div>
     );
 };

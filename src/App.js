@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className={style.container}>
       <Landing />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
