@@ -6,6 +6,7 @@
     position: relative;
     margin-bottom: 4rem;
     margin-top: 4rem;
+    width: 100%;
 }
 
 .header {
@@ -13,7 +14,7 @@
     font-weight: bold;
     margin-bottom: 4rem;
     text-align: center;
-    color: var(--color-beige-lighter);
+    color: var(--color-beige-darker);
     /* text-shadow: #607EAA 1px 2px 12px; */
 
 }
@@ -68,17 +69,22 @@
     right: 5rem;
 }
 
+.coinsDivWrapper{
+    width: 80rem;
+    position: relative;
+}
+
 .coinsDiv {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position : relative;
     height: 30rem;
     overflow: hidden;
-    width: 80rem;
+    width: 100%;
     /* border-bottom: var(--color-beige-lighter) 2px solid; */
 }
 
 .coinsDivActive {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     position : relative;
     width: 80rem;
 }
@@ -93,7 +99,7 @@
     pointer-events   : none;
     background-image : linear-gradient(to bottom, 
                         rgba(255,255,255, 0), 
-                        var(--color-beige-dark) 95%);
+                        var(--color-beige-light) 95%);
     width    : 100%;
     height   : 4rem;
 }
@@ -109,9 +115,9 @@
 input[type=text] {
     width: 30rem;
     height: 50px;
-    border: 0;
+    border: 2px solid var(--color-beige-darker);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
     padding-left: 1rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-transition: 0.5s;
@@ -119,29 +125,32 @@ input[type=text] {
     outline: none;
     box-sizing: border-box;
     background-color: var(--color-beige-light);
-    color: var(--color-beige-lighter);
+    color: var(--color-beige-darker);
     font-weight: 600;
     place-content: center;
     
 }
 
 input[type=text]:focus {
-    scale: 1.2;
+    scale: 1.1;
+    background-color: var(--color-beige-lighter);
     /* transition: 0.5s; */
 }
 
 input::placeholder {
-    color: var(--color-beige-darker);
+    color: var(--color-beige-dark);
+    /* opacity: .6; */
 }
 
 
 .viewMore {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 0rem;
     color: var(--color-gray-dark);
     font-weight: 600;
     cursor: pointer;
+    transition: .3s;
 }
 
 .viewMore:hover {

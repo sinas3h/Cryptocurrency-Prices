@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getCoin } from '../service/Api';
 import Coin from './Coin';
+import Navbar from './Navbar';
 import style from './Landing.module.css'
 import Loading from './Loading';
 
@@ -34,6 +35,9 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
 
     return (
         <div className={style.container}>
+
+            <Navbar />
+
             <div className={style.inputDiv}>
                 <h1 className={style.header}><span>Cryptocurrency</span> Prices by Market Cap</h1>
                 <input className={style.input} placeholder='search' type='text' value={input} onChange={(e) => {setInput(e.target.value)}}></input>
@@ -47,13 +51,18 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
                 <p className={style.tableMktcap}>Market Cap</p>
             </div>
 
-            <div className={!viewMore ? style.coinsDiv : style.coinsDivActive }>
-                {coins == false ? <Loading />
-                : coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}
+            <div className={style.coinsDivWrapper}>
+                <div className={!viewMore ? style.coinsDiv : style.coinsDivActive }>
+                    {coins == false ? <Loading />
+                    : coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}
+                </div>
+                
+                {(coins.length && !viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>}
+                {(coins.length && viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view less</p>}
             </div>
+            
 
-            {(coins.length && !viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>}
-            {(coins.length && viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view less</p>}
+            
             
         </div>
     );
