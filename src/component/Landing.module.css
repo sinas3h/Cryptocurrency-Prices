@@ -9,6 +9,8 @@
     width: 100%;
 }
 
+/* ------------- header --------------------- */
+
 .header {
     font-size: 2rem;
     font-weight: bold;
@@ -26,83 +28,7 @@
     text-shadow: none;
 }
 
-.table {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: .5rem;
-    background-color: #596E79;
-    border-radius: 10px;
-    padding: 1.2rem;
-    color: var(--color-beige-lighter);
-    transition: .2s;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    width: 68rem;
-    height: .8rem;
-    position: relative;
-    font-weight: bold;
-}
-
-.tableHashtag {
-    position: absolute;
-    left: 3rem;
-}
-
-.tableName {
-    position: absolute;
-    left: 13.2rem;
-}
-
-.tablePrice {
-    position: absolute;
-    left: 37.8rem;
-}
-
-.table24 {
-    position: absolute;
-    left: 48.3rem;
-}
-
-.tableMktcap {
-    position: absolute;
-    right: 5rem;
-}
-
-.coinsDivWrapper{
-    width: 80rem;
-    position: relative;
-}
-
-.coinsDiv {
-    margin-bottom: 4rem;
-    position : relative;
-    height: 30rem;
-    overflow: hidden;
-    width: 100%;
-    /* border-bottom: var(--color-beige-lighter) 2px solid; */
-}
-
-.coinsDivActive {
-    margin-bottom: 2rem;
-    position : relative;
-    width: 80rem;
-}
-
-  
-.coinsDiv:after {
-    content  : "";
-    position : absolute;
-    z-index  : 1;
-    bottom   : 0;
-    left     : 0;
-    pointer-events   : none;
-    background-image : linear-gradient(to bottom, 
-                        rgba(255,255,255, 0), 
-                        var(--color-beige-light) 95%);
-    width    : 100%;
-    height   : 4rem;
-}
+/* --------------------  input search --------------------- */
 
 .inputDiv {
     display: flex;
@@ -143,22 +69,106 @@ input::placeholder {
 }
 
 
+/* ---------------------- table -------------------------------- */
+
+.table {
+    display: grid;
+    grid-template-columns: 2.2fr 2.5fr 2.5fr .8fr 2.8fr;
+    justify-items: space-around;
+    align-content: center;
+    margin-bottom: .5rem;
+    background-color: #596E79;
+    border-radius: 10px;
+    color: var(--color-beige-lighter);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width: 68rem;
+    height: .8rem;
+    padding: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.tableMktcap {
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.tableHashtag {
+    text-align: left;
+    margin-left: 2.4rem;
+}
+
+.tableName {
+    text-align: left;
+}
+
+
+/* ------------------- coins --------------------------- */
+
+.coinsDivWrapper{
+    width: 80rem;
+    position: relative;
+}
+
+.coinsDiv {
+    margin-bottom: 4rem;
+    position : relative;
+    height: 30rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.coinsDivActive {
+    margin-bottom: 2rem;
+    position : relative;
+    width: 80rem;
+}
+
+  
+.coinsDiv:after {
+    content  : "";
+    position : absolute;
+    z-index  : 1;
+    bottom   : 0;
+    left     : 0;
+    pointer-events   : none;
+    background-image : linear-gradient(to bottom, 
+                        rgba(255,255,255, 0), 
+                        var(--color-beige-light) 95%);
+    width    : 100%;
+    height   : 4rem;
+}
+
+
+/* ------------ view more button and view less button ----------------- */
+
 .viewMore {
     position: absolute;
     right: 0;
-    bottom: 0rem;
+    bottom: 0;
     color: var(--color-gray-dark);
     font-weight: 600;
     cursor: pointer;
     transition: .3s;
 }
 
-.viewMore:hover {
+.viewLess {
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+    color: var(--color-gray-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.viewMore:hover,.viewLess:hover {
     color: var(--color-gray);
 }
 
 
-/*  ---------  responsive --------------- */
+/*  ----------------  responsive ------------------- */
 
 @media screen and (max-width : 880px) {
     input[type=text] {
@@ -180,26 +190,6 @@ input::placeholder {
 
     .header span {
         font-size: 3.4rem;
-    }
-
-    .tableName {
-        position: absolute;
-        left: 10rem;
-    }
-    
-    .tablePrice {
-        position: absolute;
-        left: 26.2rem;
-    }
-    
-    .table24 {
-        position: absolute;
-        left: 35.2rem;
-    }
-    
-    .tableMktcap {
-        position: absolute;
-        right: 5rem;
     }
 
     .loading {
@@ -247,31 +237,6 @@ input::placeholder {
         font-size: 3rem;
         display: block;
         line-height: 50px;
-    }
-
-    .tableHashtag {
-        position: absolute;
-        left: 1rem;
-    }
-
-    .tableName {
-        position: absolute;
-        left: 5rem;
-    }
-    
-    .tablePrice {
-        position: absolute;
-        left: 13.5rem;
-    }
-    
-    .table24 {
-        position: absolute;
-        left: 18.8rem;
-    }
-    
-    .tableMktcap {
-        position: absolute;
-        right: 2.5rem;
     }
 
     .loading {

@@ -1,9 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    /* margin-bottom: 1rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr .7fr 2fr 1fr 3fr;
+    grid-gap: 1rem;
+    justify-content: space-between;
     background-color: #F0ECE3;
     border-radius: 10px;
     padding: 1.5rem;
@@ -13,7 +12,8 @@
     width: 68rem;
     height: 4rem;
     margin: 1.2rem auto 1.2rem auto;
-    
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -24,57 +24,34 @@
 
 .image {
     width: 4rem;
-    margin-right: .3rem;
-    mix-blend-mode: multiply;
-    border-radius: 50%;
-    box-sizing: border-box;
-    
-}
-
-.name , .change , .price , .rank {
-    margin:0 .4rem;
-    text-align: left;
-    padding: .25rem;
-    width: 8rem;
-    font-weight:400;
-}
-
-.symbol {
-    margin:0 .1rem;
-    text-align: left;
-    padding: .25rem;
-    width: 8rem;
-    font-weight:400;
-}
-
-.cap {
-    margin-left:.4rem;
-    text-align: right;
-    padding: .5rem;
-    width: 15rem;
 }
 
 .name {
-    font-weight: bolder;
-    width: 12rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 2.1rem;
 }
 
-.rank {
-    width: 3rem;
+.symbol {
+    text-align: left;
+    opacity: .8;
+    font-size: 1.5rem;
 }
 
-.changeG , .changeR {
-    width: 5rem;
-    font-weight: bold;
-    text-align: center;
+
+.cap {
+    text-align: right;
+    padding-right: 2rem;
 }
 
 .changeG{
     color: rgb(6, 169, 6);
+    font-weight: 700;
 }
 
 .changeR {
     color: red;
+    font-weight: 700;
 }
 
 @media screen and (max-width : 880px) {
@@ -87,26 +64,6 @@
     .image {
         width: 3.5rem;
     }
-
-    .name , .change , .price , .rank , .symbol {
-        margin:0 .1rem;
-        padding: 0rem;
-        width: 6.5rem;
-    }
-
-    .cap {
-        margin-left:.1rem;
-        padding: .5rem;
-        width: 10.5rem;
-    }
-
-    .rank {
-        width: 1.5rem;
-    }
-
-    .symbol {
-        width: 4rem;
-    }
 }
 
 
@@ -114,6 +71,7 @@
 
 @media screen and (max-width : 660px) {
     .container {
+        grid-template-columns: 1fr 1fr 2fr 2fr 1fr 3fr;
         font-size: 1rem;
         width: 32rem;
         height: 3rem;
@@ -128,40 +86,8 @@
         width: 3rem;
     }
 
-    .name , .change , .price , .rank , .symbol {
-        padding: .05rem;
-        width: 6rem;
-    }
-
-    .change {
-        width: 1.5rem;
-        margin-right: 0;
-    }
-
-    .name {
-        margin-right: .2rem;
-    }
-
-    .cap {
-        margin-left:0;
-        margin-right: .2rem;
-        padding: 0;
-        width: 10.5rem;
-    }
-
-    .rank {
-        width: 1rem;
-        margin-right: .5rem;
-    }
-
     .symbol {
         display: none;
-    }
-
-    .price {
-        width: 6.5rem;
-        margin-right: 0;
-        text-align: center;
     }
 }
 

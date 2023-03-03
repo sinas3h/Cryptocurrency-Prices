@@ -47,18 +47,18 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
                 <p className={style.tableHashtag}>#</p>
                 <p className={style.tableName}>Name</p>
                 <p className={style.tablePrice}>Price</p>
-                <p className={style.table24}>24 %</p>
+                <p className={style.tableChange24}>24H %</p>
                 <p className={style.tableMktcap}>Market Cap</p>
             </div>
 
             <div className={style.coinsDivWrapper}>
                 <div className={!viewMore ? style.coinsDiv : style.coinsDivActive }>
-                    {coins == false ? <Loading />
+                    {!coins.length ? <Loading />
                     : coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}
                 </div>
-                
+
                 {(coins.length && !viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>}
-                {(coins.length && viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view less</p>}
+                {(coins.length && viewMore) && <p className={style.viewLess} onClick={viewMoreHandler}>view less</p>}
             </div>
             
 
