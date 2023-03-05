@@ -36,10 +36,9 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
     return (
         <div className={style.container}>
 
-            <Navbar />
+            <h1 className={style.header}><span>Cryptocurrency</span> Prices by Market Cap</h1>
 
             <div className={style.inputDiv}>
-                <h1 className={style.header}><span>Cryptocurrency</span> Prices by Market Cap</h1>
                 <input className={style.input} placeholder='search' type='text' value={input} onChange={(e) => {setInput(e.target.value)}}></input>
             </div>
 
@@ -57,8 +56,12 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
                     : coinFilter.map(coin => <Coin key={coin.id} data={coin} />)}
                 </div>
 
-                {(coins.length && !viewMore) && <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>}
-                {(coins.length && viewMore) && <p className={style.viewLess} onClick={viewMoreHandler}>view less</p>}
+                {(coins.length && !viewMore) ? 
+                <p className={style.viewMore} onClick={viewMoreHandler}>view more</p>
+                :
+                viewMore &&
+                <p className={style.viewLess} onClick={viewMoreHandler}>view less</p>}
+
             </div>
             
 

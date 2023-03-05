@@ -1,10 +1,96 @@
 
 .container {
-    width: 100%;
+    width: 85%;
+    display: flex;
+    margin: 4rem auto 0 auto
+    /* justify-content: center; */
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2.5rem;
+    position: fixed;
+    top : 3rem;
+    left: 3rem;
+    z-index: 5;
+    transition: .3s;
+    position: fixed;
+    cursor: pointer;
+}
+
+.menuActive {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.5rem;
+    position: absolute;
+    top : 3rem;
+    left: 3rem;
+    z-index: 5;
+    transition: .2s;
+    position: fixed;
+    cursor: pointer;
+
+
+}
+
+.menuActive :nth-child(2) {
+    display: none;
+}
+
+.menuActive :nth-child(1) {
+    animation: rotateMenu .1s linear;
+    animation-fill-mode: forwards
+
+}
+
+.menuActive :nth-child(3) {
+    animation: rotateMenu2 .1s linear;
+    animation-fill-mode: forwards
+
+}
+
+@keyframes rotateMenu {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(6px) translateX(7px);
+
+    }
+}
+
+@keyframes rotateMenu2 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.menu span {
+    background-color: var(--color-gray-dark);
+    width: 3rem;
+    height: .5rem;
+    border-radius: 5px;
+    box-shadow: var(--color-beige-darker) 2px 5px 15px;
+}
+
+.menuActive span {
+    background-color: var(--color-gray-dark);
+    width: 3rem;
+    height: .5rem;
+    border-radius: 5px;
 }
 
 .navbar {
-    margin: 0 10rem;
+    width: 100%;
+    /* margin: 0 6rem; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,6 +111,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* margin-left: 4rem; */
 }
 
 .navbarLeft :not(:last-child) {
@@ -35,6 +122,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* margin-right: 4rem; */
+
 }
 
 .navbarRight :first-child {
@@ -53,4 +142,66 @@
 
 .button:hover {
     background-color: var(--color-beige-dark);
+}
+
+
+@media screen and (max-width : 880px) {
+
+    .container {
+        /* width: 100vw; */
+        position: relative;
+        justify-content: flex-start;
+        margin: 0;
+
+        /* height: 50rem; */
+
+    }
+
+    .menu,.menuActive {
+        display: flex;
+    }
+    .navbar{
+        padding: 0 3rem;
+        width: 80%;
+        height: 90vh;
+        margin: 0 10rem;
+        background-color: var(--color-beige-lighter);
+        position: absolute;
+        left: -100%;
+        top: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: flex-start;
+        /* height: 25rem; */
+        z-index: 3;
+        border-bottom-right-radius: 10px;
+        transition: .3s;
+        position: fixed;
+
+    }
+
+    .navbarMenu {
+        left: 0;
+        transition: .3s;
+        position: fixed;
+
+    }
+
+    .navbarLeft{
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-evenly;
+        height: 30%;
+        border-bottom: 1px solid var(--color-beige-darker);
+        padding-top: 6rem;
+    }
+
+    .navbarRight {
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-between;
+        height: 13%;
+        margin-top: 3rem;
+    }
 }

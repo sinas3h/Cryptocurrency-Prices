@@ -14,7 +14,7 @@
 .header {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
     color: var(--color-beige-darker);
     /* text-shadow: #607EAA 1px 2px 12px; */
@@ -34,7 +34,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
     padding: 2rem;
 }
 
@@ -76,7 +75,7 @@ input::placeholder {
     grid-template-columns: 2.2fr 2.5fr 2.5fr .8fr 2.8fr;
     justify-items: space-around;
     align-content: center;
-    margin-bottom: .5rem;
+    margin-bottom: 1.2rem;
     background-color: #596E79;
     border-radius: 10px;
     color: var(--color-beige-lighter);
@@ -119,13 +118,7 @@ input::placeholder {
     width: 100%;
 }
 
-.coinsDivActive {
-    margin-bottom: 2rem;
-    position : relative;
-    width: 80rem;
-}
 
-  
 .coinsDiv:after {
     content  : "";
     position : absolute;
@@ -138,6 +131,12 @@ input::placeholder {
                         var(--color-beige-light) 95%);
     width    : 100%;
     height   : 4rem;
+}
+
+.coinsDivActive {
+    margin-bottom: 2rem;
+    position : relative;
+    width: 100%;
 }
 
 
@@ -171,10 +170,15 @@ input::placeholder {
 /*  ----------------  responsive ------------------- */
 
 @media screen and (max-width : 880px) {
+
     input[type=text] {
         width: 25rem;
         height: 4.5rem;
         font-size: 1.2rem;
+    }
+
+    .coinsDivWrapper {
+        width: 58rem;
     }
 
     .table {
@@ -200,15 +204,23 @@ input::placeholder {
 
 
 @media screen and (max-width : 660px) {
+
+    .container{
+        margin-top: 8rem;
+    }
+
     input[type=text] {
         width: 20rem;
         height: 4rem;
         font-size: 1rem;
     }
 
+    .coinsDivWrapper {
+        width: 34rem;
+    }
+
     .coinsDiv {
         height: 30rem;
-        width: 34rem;
     }
 
     .viewMore {
@@ -217,11 +229,21 @@ input::placeholder {
     }
 
     .table {
+        grid-template-columns: 2fr 2.5fr 1.7fr 1.5fr 2.5fr;
+        margin-bottom: .5rem;  
         font-size: 1rem;
-        width: 30rem;
+        width: 31rem;
         height: .8rem;
         padding:.6rem .4rem;
         border-radius: 8px;
+    }
+
+    .tableMktcap {
+        margin-right: 0;
+    }
+    
+    .tableHashtag {
+        margin-left: 0;
     }
 
     .inputDiv {
