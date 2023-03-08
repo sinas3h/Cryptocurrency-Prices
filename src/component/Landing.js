@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
+
+//api
 import { getCoin } from '../service/Api';
+
+//component
 import Coin from './Coin';
-import Navbar from './Navbar';
-import style from './Landing.module.css'
 import Loading from './Loading';
+
+//style
+import style from './Landing.module.css'
+
 
 
 
@@ -24,8 +30,6 @@ console.log(coins)
 
 const viewMoreHandler = ()=> {
     setViewMore(!viewMore)
-    console.log("more")
-    console.log(viewMore)
 }
 
 
@@ -65,8 +69,6 @@ const coinFilter = coins.filter(coin => coin.name.toLowerCase().includes(input.t
             </div>
             
 
-            
-            
         </div>
     );
 };
